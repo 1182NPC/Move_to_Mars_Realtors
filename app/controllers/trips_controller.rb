@@ -8,7 +8,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user
-    if @trip.save!
+    if @trip.save
       redirect_to trip_path(@trip)
     else
       render :new, status: :unprocessable_entity
