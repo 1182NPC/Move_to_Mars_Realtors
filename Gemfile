@@ -77,4 +77,5 @@ group :test do
 end
 
 gem "devise"
-gem "simple_form", github: "heartcombo/simple_form"
+gem "cloudinary"
+gem "dotenv-rails", groups: [:development, :test]
