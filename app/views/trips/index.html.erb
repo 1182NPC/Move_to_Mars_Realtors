@@ -1,8 +1,12 @@
-<% @trips.each do |trip| %>
-<h3> <%= trip.name %> </h3>
-<h6> Price per day: €<%= trip.price %> </h6>
-<%= link_to 'View trip details', trip_path(trip) %>
-<% end %>
-<br>
-<br>
-<%= link_to 'Back', root_path %>
+<div class="cards">
+  <% @trips.each do |trip| %>
+    <div class="cards-and-info">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= trip.name %>
+        </div>
+      <h6> Price per day: €<%= trip.price %> </h6>
+        <%= link_to 'View trip details', trip_path(trip) %>
+        <%= link_to 'Back', root_path %>
+    </div>
+  <% end %>
+</div>
