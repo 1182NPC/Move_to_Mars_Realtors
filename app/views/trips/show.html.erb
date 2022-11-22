@@ -8,4 +8,11 @@
     <div>
       <h1><%= @trip.description %><h1>
   </div>
+  <%= link_to 'Book this trip', new_trip_booking_path(@trip) %>
+
+  <%= link_to 'See all trips', trips_path %>
+
+  <% if @trip.user == current_user %>
+  <%= link_to 'Delete this trip', trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <% end %>
 </div>
