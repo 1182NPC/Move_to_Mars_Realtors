@@ -1,0 +1,6 @@
+<% @bookings.each do |booking| %>
+  <h2>Start date:<%= booking.start_date %> End date:<%= booking.end_date %></h2>
+  <h3>Trip:<%= booking.trip.name %></h3>
+  <%= link_to "View trip details", trip_path(booking.trip)%>
+  <p>Price: <%=booking.trip.price %></p>
+<% end %>
