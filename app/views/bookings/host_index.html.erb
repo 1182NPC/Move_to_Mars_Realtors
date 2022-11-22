@@ -6,6 +6,11 @@
   <% end %>
 <% end %>
 
+  <%# <% if booking.accept? %> %>
+
+
+
+
 <% host_bookings.each do |booking| %>
   <p>Customer: <%=booking.user.email%></p>
   <%# booking status %>
@@ -13,4 +18,13 @@
   <h3>Trip:<%= booking.trip.name %></h3>
   <%= link_to "View trip details", trip_path(booking.trip)%>
   <p>Price per day: €<%=booking.trip.price %></p>
+
+  <% if booking.pending? %>
+    <%=link_to "Accept this booking", accept_path(booking)%>
+    <%=link_to "Reject this booking", reject_path(booking)%>
+  <% elsif booking.accepted? %>
+    <%=link_to "Reject this booking", reject_path(booking)%>
+  <% elsif booking.rejected? %>
+    <%=link_to "Accept this booking", accept_path(booking)%>
+  <% end%>
 <% end %>

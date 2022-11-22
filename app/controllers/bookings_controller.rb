@@ -10,9 +10,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    # @booking.pending!
     @booking.trip = set_trip
     @booking.user = current_user
+    @booking.pending!
     if @booking.save
       redirect_to bookings_path
     else
@@ -48,17 +48,17 @@ class BookingsController < ApplicationController
   # accept Button /bookmars/1?action=accepted!
   # reject Button /bookmars/1?action=rejected!
 
-  # def accept
-  #   @booking = Booking.find(params[:id])
-  #   @booking.accepted!
-  #   redirect_to @booking.trip
-  # end
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.accepted!
+    redirect_to host_bookings_path
+  end
 
-  # def rejected
-  #   @booking = Booking.find(params[:id])
-  #   @booking.rejected!
-  #   redirect_to @booking.trip
-  # end
+  def reject
+    @booking = Booking.find(params[:id])
+    @booking.rejected!
+    redirect_to host_bookings_path
+  end
 
   private
 
