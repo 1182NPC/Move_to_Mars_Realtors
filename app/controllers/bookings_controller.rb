@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.pending!
+    # @booking.pending!
     @booking.trip = set_trip
     @booking.user = current_user
     if @booking.save
@@ -19,19 +19,25 @@ class BookingsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
-   def index
+
+  def index
     @bookings = Booking.where(user_id: current_user)
   end
 
   def host_index
     @bookings = Booking.all
   end
-  
+
   def update
     @booking = Booking.find(params[:id])
     method = params[:action]
     @booking.public_send(method)
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path, status: :see_other
   end
 
   # a user will sendn a "params[:action]" when they click on either the accept or the reject button

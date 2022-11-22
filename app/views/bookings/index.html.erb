@@ -3,4 +3,6 @@
   <h3>Trip:<%= booking.trip.name %></h3>
   <%= link_to "View trip details", trip_path(booking.trip)%>
   <p>Price: <%=booking.trip.price %></p>
+  <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 <% end %>
+<%= link_to 'Home', root_path %>
