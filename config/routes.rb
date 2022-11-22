@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  get 'bookings/host', to: 'bookings#host_index', as: 'host_bookings'
+
   resources :trips do
     resources :bookings, only: [:new, :create]
   end
