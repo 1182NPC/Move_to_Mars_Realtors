@@ -1,6 +1,6 @@
 <% @trips.each do |trip| %>
 <h3> <%= trip.name %> </h3>
-<h3> <%= trip.price %> </h3>
+<h6> Price per day: €<%= trip.price %> </h6>
 <%= link_to 'View trip details', trip_path(trip) %>
 <% end %>
 <br>

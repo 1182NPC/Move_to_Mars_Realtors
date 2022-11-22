@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get 'bookings/host', to: 'bookings#host_index', as: 'host_bookings'
+  get 'bookings/:id/accept', to: 'bookings#accept', as: 'accept'
+  get 'bookings/:id/reject', to: 'bookings#reject', as: 'reject'
 
   resources :trips do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :show, :destroy]
+  resources :bookings, only: [:index, :show, :destroy, :accept, :reject]
 end

@@ -1,8 +1,16 @@
 <% @bookings.each do |booking| %>
-  <h2>Start date:<%= booking.start_date %> End date:<%= booking.end_date %></h2>
+  <h2>Start date: <%= booking.start_date.strftime("%d %b %Y") %></h2>
+  <h2>End date: <%= booking.end_date.strftime("%d %b %Y") %></h2>
   <h3>Trip:<%= booking.trip.name %></h3>
   <%= link_to "View trip details", trip_path(booking.trip)%>
-  <p>Price: <%=booking.trip.price %></p>
+  <h4>Price per day: €<%=booking.trip.price %></h4>
   <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  <% if booking.pending? %>
+      <p>This booking is pending</p>
+  <% elsif booking.accepted? %>
+      <p>This booking is confirmed</p>
+  <% elsif booking.rejected? %>
+      <p>This booking was rejected</p>
+  <% end%>
 <% end %>
 <%= link_to 'Home', root_path %>
