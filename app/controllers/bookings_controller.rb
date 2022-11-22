@@ -1,10 +1,26 @@
 class BookingsController < ApplicationController
 
-  # Default status of the booking needs to be pending in the create method !!!! IMPROTANT
 
+  def new
+    set_trip
+    @booking = Booking.new
+    @booking.user = current_user
+    @booking.trip = @trip
+  end
 
-
-  def index
+  def create
+    @booking = Booking.new(booking_params)
+    @booking.pending!
+    @booking.trip = set_trip
+    @booking.user = current_user
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+  
+   def index
     @bookings = Booking.where(user_id: current_user)
   end
 
@@ -38,6 +54,15 @@ class BookingsController < ApplicationController
   #   redirect_to @booking.trip
   # end
 
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def set_trip
+    @trip = Trip.find(params[:trip_id])
+  end
 
 
 end
