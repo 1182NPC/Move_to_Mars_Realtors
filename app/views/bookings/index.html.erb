@@ -1,24 +1,52 @@
 <div id = "bg">
-  <div style = "padding-top: 5px">
-  <% if @bookings.first.nil? %>
-    <h5> You have no bookings </h5>
-  <% end %>
-    <% @bookings.each do |booking| %>
-      <h2>Start date: <%= booking.start_date.strftime("%d %b %Y") %></h2>
-      <h2>End date: <%= booking.end_date.strftime("%d %b %Y") %></h2>
-      <h3>Trip:<%= booking.trip.name %></h3>
-      <%= link_to "View trip details", trip_path(booking.trip)%>
-      <h4>Price per day: <%=booking.trip.price %></h4>
-      <h4>Total price in galactic credits: <%=((booking.end_date - booking.start_date)/86400 * booking.trip.price).round %></h4>
-      <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-      <% if booking.pending? %>
-          <p style="color: blue">This booking is pending</p>
-      <% elsif booking.accepted? %>
-          <p style="color: green">This booking is confirmed</p>
-      <% elsif booking.rejected? %>
-          <p style="color: red">This booking was rejected</p>
-      <% end%>
-    <% end %>
-    <%= link_to 'Home', root_path %>
+  <div class ="container" style ="padding-top: 5px">
+    <div class="bookings-grid">
+        <% @bookings.each do |booking| %>
+          <div class="bookings-card">
+            <% if booking.trip.photos.first.nil? %>
+              <%= link_to trip_path(booking.trip) do %>
+                <div class="booking-card-category" style="height:480px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1630694093867-4b947d812bf0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1315&q=80')">
+                  <%= booking.trip.name %>
+              <% end %>
+            <% else %>
+              <div class="bookings-top-grid">
+                <% booking.trip.photos.each do |photo| %>
+                    <%= link_to trip_path(booking.trip) do %>
+                      <div class="booking-card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path photo.key, crop: :fill %>')">
+                      <%= booking.trip.name %>
+                    <% end %>
+              </div>
+                <% end %>
+            </div>
+            <div class="booking-card-price-buttons">
+
+              <div class="dates">
+                <h6><em>Start date: <%= booking.start_date.strftime("%d %b %Y") %></em></h6>
+                <h6><em>End date: <%= booking.end_date.strftime("%d %b %Y") %></em></h6>
+              </div>
+
+              <h4>Price per day: <%=booking.trip.price %></h4>
+              <h4>Total price in galactic credits: <%=((booking.end_date - booking.start_date)/86400 * booking.trip.price).round %></h4>
+
+                <div class="booking-info">
+                  <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%>
+                  <%= link_to 'Home', root_path, class: "btn btn-primary" %>
+                </div>
+
+                <div class="pending-link">
+                  <% if booking.pending? %>
+                      <p style="color: blue">This booking is pending</p>
+                  <% elsif booking.accepted? %>
+                      <p style="color: green">This booking is confirmed</p>
+                  <% elsif booking.rejected? %>
+                      <p style="color: red">This booking was rejected</p>
+                      <%= link_to "View trip details", trip_path(booking.trip), class:"btn btn-success"%>
+                  <% end%>
+                  <% end %>
+                </div>
+              </div>
+          </div>
+        <% end %>
+    </div>
   </div>
 </div>
