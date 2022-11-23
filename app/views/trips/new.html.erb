@@ -5,13 +5,16 @@
 </div>
 
 <div class="container mt-5">
-  <div>
-    <%= simple_form_for [@trip] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :price %>
-    <%= f.input :description %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit "Submit" %>
-    <% end %>
+  <div class="border border-danger">
+
+    <div>
+      <%= simple_form_for [@trip] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :price %>
+      <%= f.input :description %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.submit "Submit" %>
+      <% end %>
+    </div>
   </div>
 </div>
