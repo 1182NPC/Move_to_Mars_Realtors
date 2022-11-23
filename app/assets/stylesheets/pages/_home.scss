@@ -27,13 +27,10 @@
 .home-logo {
   background-image: url(https://res.cloudinary.com/depkh8amy/image/upload/v1669206978/bground_xq0it2.png);
   height: 100%;
-  /* position: absolute; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* z-index: 100; */
   width: 100%;
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
+  position: fixed;
 }
