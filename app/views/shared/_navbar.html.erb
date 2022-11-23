@@ -24,8 +24,11 @@
               <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", style:"width:40px; height:40px; object-fit:cover;", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "See available trips ", trips_path, class: "dropdown-item" %>
+              <%= link_to "Offer a trip", new_trip_path, class: "dropdown-item" %>
+              <%= link_to "View my bookings ", bookings_path, class: "dropdown-item" %>
+              <%= link_to "See booking requests for my trips", host_bookings_path, class: "dropdown-item" %>
+
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
