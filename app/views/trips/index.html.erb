@@ -18,11 +18,13 @@
           <% end %>
         <% end %>
             </div>
-        <h6> Price per day: €<%= trip.price %> </h6>
-          <div class="info">
-            <%= link_to 'View trip details', trip_path(trip) %>
-            <%= link_to 'Back', root_path %>
-          </div>
+        <div class="card-price-buttons">
+          <h6> Price per day: €<%= trip.price %> </h6>
+            <div class="info">
+              <%= link_to 'View trip details', trip_path(trip) %>
+              <%= link_to 'Back', root_path %>
+            </div>
+        </div>
       </div>
       <% end %>
   </div>
