@@ -1,17 +1,20 @@
-<div class="container mt-5">
-  <div class="mx-auto" style="width: 240px;">
-    <h3><ins>Book this trip:</ins></h3>
-  </div>
-
-  <div class="box">
-    <div class="container mt-5 p-5">
-      <div>
-        <%= simple_form_for [@trip, @booking] do |f| %>
-          <%= f.input :start_date, as: :date, html5: true %>
-          <%= f.input :end_date, as: :date, html5: true %>
-          <%= f.submit class: "btn btn-outline-success"%>
-        <% end %>
+ <div id = "bg">
+  <div style = "padding-top: 5px">
+    <div class="container mt-5">
+      <div class="mx-auto" style="width: 240px;">
+        <h3><ins>Book this trip:</ins></h3>
       </div>
-    <div>
+      <div class="box">
+        <div class="container mt-5 p-5">
+          <div>
+            <%= simple_form_for [@trip, @booking] do |f| %>
+              <%= f.input :start_date, as: :date, html5: true %>
+              <%= f.input :end_date, as: :date, html5: true %>
+              <%= f.submit class: "btn btn-outline-success"%>
+            <% end %>
+          </div>
+        <div>
+      </div>
+    </div>
   </div>
 </div>
