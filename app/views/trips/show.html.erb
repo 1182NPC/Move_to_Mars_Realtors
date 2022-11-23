@@ -1,18 +1,32 @@
-<div class = "container">
-  <div>
-    <h1><%= @trip.name %><h1>
-  </div>
-    <div>
+<div class = "container shadow">
+
+
+      <div class="cards-and-info w-100 my-4">
+        <% if @trip.photos.first.nil? %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1630694093867-4b947d812bf0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1315&q=80')">
+            <%= @trip.name %>
+          </div>
+        <% else %>
+          <% @trip.photos.each do |photo| %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path photo.key, crop: :fill %>')">
+            <%= @trip.name %>
+            </div>
+          <% break %>
+          <% end %>
+        <% end %>
+      </div>
+    <div class="lower-card">
+
       <h1>Price per day: €<%= @trip.price %><h1>
-  </div>
-    <div>
       <h1><%= @trip.description %><h1>
-  </div>
-  <%= link_to 'Book this trip', new_trip_booking_path(@trip) %>
+    <div class="card-options">
+      <%= link_to 'Book this trip', new_trip_booking_path(@trip), class:"btn btn-success" %>
 
-  <%= link_to 'See all trips', trips_path %>
+      <%= link_to 'See all trips', trips_path, class:"btn btn-primary"  %>
 
-  <% if @trip.user == current_user %>
-  <%= link_to 'Delete this trip', trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <% end %>
+      <% if @trip.user == current_user %>
+      <%= link_to 'Delete this trip', trip_path(@trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"  %>
+      <% end %>
+    </div>
+    </div>
 </div>
