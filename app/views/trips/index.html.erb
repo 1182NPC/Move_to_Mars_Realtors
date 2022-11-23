@@ -4,12 +4,16 @@
       <div class="cards-and-info">
       <%# <% raise %>
         <% if trip.photos.first.nil? %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1630694093867-4b947d812bf0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1315&q=80')">
-            <%= trip.name %>
+          <%= link_to trip_path(trip) do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1630694093867-4b947d812bf0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1315&q=80')">
+              <%= trip.name %>
+          <% end %>
         <% else %>
           <% trip.photos.each do |photo| %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path photo.key, crop: :fill %>')">
-            <%= trip.name %>
+            <%= link_to trip_path(trip) do %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path photo.key, crop: :fill %>')">
+              <%= trip.name %>
+            <% end %>
             <% break %>
           <% end %>
         <% end %>
