@@ -3,14 +3,15 @@
   <h2>End date: <%= booking.end_date.strftime("%d %b %Y") %></h2>
   <h3>Trip:<%= booking.trip.name %></h3>
   <%= link_to "View trip details", trip_path(booking.trip)%>
-  <h4>Price per day: €<%=booking.trip.price %></h4>
+  <h4>Price per day: <%=booking.trip.price %></h4>
+  <h4>Total price in galactic credits: <%=((booking.end_date - booking.start_date)/86400 * booking.trip.price).round %></h4>
   <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   <% if booking.pending? %>
-      <p>This booking is pending</p>
+      <p style="color: blue">This booking is pending</p>
   <% elsif booking.accepted? %>
-      <p>This booking is confirmed</p>
+      <p style="color: green">This booking is confirmed</p>
   <% elsif booking.rejected? %>
-      <p>This booking was rejected</p>
+      <p style="color: red">This booking was rejected</p>
   <% end%>
 <% end %>
 <%= link_to 'Home', root_path %>
