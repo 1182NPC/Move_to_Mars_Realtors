@@ -1,18 +1,22 @@
-<div class="container mt-5">
-  <div class="mx-auto" style="width: 240px;">
-    <h3><ins>Create A new trip:</ins></h3>
-  </div>
-</div>
-
-
-<div class="container mt-5">
-    <div>
-      <%= simple_form_for [@trip] do |f| %>
-      <%= f.input :name %>
-      <%= f.input :price %>
-      <%= f.input :description %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit "Submit", class: "btn btn-outline-success"%>
-      <% end %>
+<div id = "bg">
+  <div style = "padding-top: 5px">
+    <div class="container mt-5">
+      <div class="mx-auto" style="width: 240px;">
+        <h3><ins>Create A new trip:</ins></h3>
+      </div>
     </div>
+
+
+    <div class="container mt-5">
+        <div>
+          <%= simple_form_for [@trip] do |f| %>
+          <%= f.input :name %>
+          <%= f.input :price %>
+          <%= f.input :description %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.submit "Submit", class: "btn btn-outline-success"%>
+          <% end %>
+        </div>
+    </div>
+  </div>
 </div>

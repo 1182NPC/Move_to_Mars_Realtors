@@ -5,19 +5,35 @@
   padding: 0;
   box-sizing: border-box;
   overflow-x: 0;
+  overflow-y: 0;
 }
 
 .body {
   background-color: #e77d11;
 }
 
-.banner {
-  background:url(https://res.cloudinary.com/depkh8amy/image/upload/v1669132056/HOME-BG-LANDSCAPE_tomxmg.png)no-repeat center center fixed;
+.home-background {
+
+  background: url("https://res.cloudinary.com/depkh8amy/image/upload/v1669204699/ss_898bdeefe8e13fd984d6a51648d9277a1b5cfe35.1920x1080_zpgm2n.jpg");
   background-size: cover;
   width: 100%;
-  height: 810px;
+  height: 100vh;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* text-align: center; */
+  position: relative;
+}
+
+.home-logo {
+  background-image: url(https://res.cloudinary.com/depkh8amy/image/upload/v1669206978/bground_xq0it2.png);
+  height: 100%;
+  /* position: absolute; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* z-index: 100; */
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
   justify-content: center;
-  display: block;
-  align-items: center;
-  text-align: center;
 }
