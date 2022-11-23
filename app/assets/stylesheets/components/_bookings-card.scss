@@ -1,4 +1,4 @@
-.cards-and-info {
+.bookings-card {
   padding: 0;
   display:flex;
   flex-direction: column;
@@ -6,19 +6,16 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px !important;
 
-  .card-category {
+  .booking-card-category {
     background-size: cover;
     background-position: center;
-    height: 180px;
     display: flex;
+    height: 480px;
     justify-content: center;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 
     a {
-      width: 100%;
-      height: 100%;
-      padding: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -28,6 +25,8 @@
       font-size: 24px;
       font-weight: bold;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      width: 100%;
+      height: 100%;
       background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
@@ -39,40 +38,53 @@
     }
   }
 
-  .card-price-buttons {
+  .booking-card-price-buttons {
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 15px;
 
+    .dates {
+      display: flex;
+      justify-content: space-around;
+    }
 
     h6 {
       text-align: center;
       margin-top: 15px;
     }
 
-    .info {
+    h4 {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .booking-info {
       display: flex;
       justify-content: space-between;
       margin-top: 10px;
       margin-bottom: 20px;
 
       a {
-        text-decoration: none;
-        text-align: center;
-        color: #451804;
-        background-color: #e77d11;
         min-width: 40%;
-        padding: 3px;
-        border-radius: 6px;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         margin-left: 10px;
         margin-right: 10px;
       }
+    }
 
-      a:hover {
-        background-color: #c1440e;
-        transition: background-color 0.4s ease;
+    .pending-link {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 10px;
+      margin-right: 10px;
+
+      a {
+        text-align: center;
       }
     }
   }
