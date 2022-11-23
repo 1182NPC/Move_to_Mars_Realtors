@@ -9,14 +9,17 @@
         <% else %>
           <% trip.photos.each do |photo| %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path photo.key, crop: :fill %>')">
+            <%= trip.name %>
             <% break %>
           <% end %>
         <% end %>
-          </div>
+            </div>
         <h6> Price per day: €<%= trip.price %> </h6>
-          <%= link_to 'View trip details', trip_path(trip) %>
-          <%= link_to 'Back', root_path %>
-        </div>
+          <div class="info">
+            <%= link_to 'View trip details', trip_path(trip) %>
+            <%= link_to 'Back', root_path %>
+          </div>
+      </div>
       <% end %>
   </div>
 </div>

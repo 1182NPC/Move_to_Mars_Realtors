@@ -1,7 +1,40 @@
 .cards {
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+
+  .cards-and-info {
+    padding: 0;
+    display:flex;
+    flex-direction: column;
+
+    h6 {
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        text-decoration: none;
+        text-align: center;
+        color: #451804;
+        background-color: #e77d11;
+        min-width: 40%;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-radius: 6px;
+      }
+
+      a:hover {
+        background-color: #c1440e;
+        transition: background-color 0.4s ease;
+      }
+    }
+  }
 }
 
 // Smallest device
