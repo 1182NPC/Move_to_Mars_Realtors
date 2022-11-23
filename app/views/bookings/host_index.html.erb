@@ -1,28 +1,42 @@
 <% host_bookings = [] %>
+<div class="container">
+  <div class="bookings-grid">
 
-<% @bookings.each do |booking| %>
-  <% if booking.trip.user = current_user %>
-    <%host_bookings << booking %>
-  <% end %>
-<% end %>
+    <% @bookings.each do |booking| %>
+      <% if booking.trip.user = current_user %>
+        <%host_bookings << booking %>
+      <% end %>
+    <% end %>
 
-<% host_bookings.each do |booking| %>
-  <p>Customer: <%=booking.user.email%></p>
-  <h2>Start date: <%= booking.start_date.strftime("%d %b %Y") %></h2>
-  <h2>End date: <%= booking.end_date.strftime("%d %b %Y") %></h2>
-  <h3>Trip: <%= booking.trip.name %></h3>
-  <%= link_to "View trip details", trip_path(booking.trip)%>
-  <p>Price per day: €<%=booking.trip.price %></p>
+    <% host_bookings.each do |booking| %>
+      <div class="bookings-card">
+      <div class="bookings-top-grid">
+        <h2>Customer: <%=booking.user.email%></h2>
+        <h4>Start date: <%= booking.start_date.strftime("%d %b %Y") %></h4>
+        <h4>End date: <%= booking.end_date.strftime("%d %b %Y") %></h4>
+      </div>
+      <div class="booking-card-price-buttons">
 
-  <% if booking.pending? %>
-    <%=link_to "Accept this booking", accept_path(booking)%>
-    <%=link_to "Reject this booking", reject_path(booking)%>
-  <% elsif booking.accepted? %>
-    <%=link_to "Reject this booking", reject_path(booking)%>
-  <% elsif booking.rejected? %>
-    <%=link_to "Accept this booking", accept_path(booking)%>
-  <% end%>
-<% end %>
+        <div class="booking-info">
+        <h3><%= booking.trip.name %></h3>
+        <%= link_to "View trip details", trip_path(booking.trip)%>
+        <p>Price per day: €<%=booking.trip.price %></p>
+        </div>
 
-<%= link_to 'Home', root_path %>
+        <div class="pending-link">
+        <% if booking.pending? %>
+          <%=link_to "Accept this booking", accept_path(booking), class:"btn btn-success"%>
+          <%=link_to "Reject this booking", reject_path(booking), class:"btn btn-danger"%>
+        <% elsif booking.accepted? %>
+          <%=link_to "Reject this booking", reject_path(booking), class:"btn btn-danger"%>
+        <% elsif booking.rejected? %>
+          <%=link_to "Accept this booking", accept_path(booking), class:"btn btn-success"%>
+        <% end%>
+        </div>
+      </div>
+    </div>
+      <% end %>
 
+    <%= link_to 'Home', root_path %>
+  </div>
+</div>

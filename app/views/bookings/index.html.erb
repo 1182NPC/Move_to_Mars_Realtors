@@ -3,7 +3,7 @@
       <% @bookings.each do |booking| %>
         <div class="bookings-card">
           <% if booking.trip.photos.first.nil? %>
-            <%= link_to booking.trip_path(trip) do %>
+            <%= link_to trip_path(booking.trip) do %>
               <div class="booking-card-category" style="height:480px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1630694093867-4b947d812bf0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1315&q=80')">
                 <%= booking.trip.name %>
             <% end %>
