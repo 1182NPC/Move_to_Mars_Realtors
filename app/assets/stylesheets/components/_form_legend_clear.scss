@@ -8,3 +8,35 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+
+.box{
+--border-size: 3px;
+--border-angle: 0turn;
+background-image: conic-gradient(
+      from var(--border-angle),
+      rgb(255, 255, 255),
+      rgb(255, 255, 255) 50%,
+      rgb(255, 255, 255)
+    ),
+    conic-gradient(from var(--border-angle), transparent 10%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 4))
+      calc(100% - (var(--border-size) * 4)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 16s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+  box-shadow: 20px 20px 50px grey;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
