@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-
+  before_action :set_results
 
   def new
     set_trip
@@ -68,6 +68,10 @@ class BookingsController < ApplicationController
 
   def set_trip
     @trip = Trip.find(params[:trip_id])
+  end
+
+  def set_results
+    @results
   end
 
 

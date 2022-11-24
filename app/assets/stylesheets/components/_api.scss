@@ -1,0 +1,46 @@
+.image-api{
+  border: 2px solid orange;
+  height: 500px;
+  border-radius: 10px;
+  background-color: orange;
+
+
+
+
+  .image-container{
+    background-size: cover;
+    border-radius: 10px;
+    border: 2px solid black;
+
+
+
+
+  }
+
+  .lower-image-container{
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+
+  }
+
+
+
+
+}
+
+.carouselimgbox{
+  height: 400px;
+
+}
+
+.carouselimg{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}

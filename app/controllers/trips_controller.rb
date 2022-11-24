@@ -1,5 +1,7 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show]
+  before_action :set_results
+
 
   def new
     @trip = Trip.new
@@ -37,4 +39,9 @@ class TripsController < ApplicationController
   def trip_params
     params.require(:trip).permit(:name, :price, :description, photos: [])
   end
+
+  def set_results
+    @results
+  end
+  
 end
