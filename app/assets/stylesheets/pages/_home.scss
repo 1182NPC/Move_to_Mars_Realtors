@@ -21,7 +21,7 @@
   /* justify-content: center; */
   /* align-items: center; */
   /* text-align: center; */
-  position: relative;
+  position:fixed;
 }
 
 .home-logo {
@@ -32,5 +32,5 @@
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  position: fixed;
+  position: sticky;
 }
