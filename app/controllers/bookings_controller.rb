@@ -25,7 +25,13 @@ class BookingsController < ApplicationController
   end
 
   def host_index
-    @bookings = Booking.all
+    @bookings = []
+    Booking.all.each do |booking|
+      if booking.trip.user == current_user
+        @bookings << booking
+      end
+    end
+    @bookings
   end
 
   def update

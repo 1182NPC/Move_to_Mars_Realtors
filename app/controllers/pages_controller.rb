@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   end
 
   def serialize
-    url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2022-11-1&api_key=DEMO_KEY"
+    url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2022-11-1&api_key=QlznhKndy19hbfAVKWeMFeC6wKc5Sec0fUz34g0T"
     attempt_serialized = URI.open(url).read
       JSON.parse(attempt_serialized)
   end
