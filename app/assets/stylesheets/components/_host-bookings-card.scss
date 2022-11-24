@@ -1,0 +1,48 @@
+.host-card {
+  padding: 0;
+  display:flex;
+  flex-direction: column;
+  background-color: #f0e7e7;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px !important;
+
+  .host-info {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    h6 {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    h4 {
+      text-align: center;
+      margin-top: 15px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid;
+    }
+
+    a {
+      text-align: center;
+    }
+
+    .host-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.home-button {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+
+  a {
+    width: 25%;
+  }
+}
