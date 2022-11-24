@@ -15,9 +15,9 @@
             <div class="host-info">
               <h4><strong><%= booking.trip.name %></strong></h4>
                 <% if booking.accepted? %>
-                <h5 style="background-color:green">You have accepted</h5>
+                <h5 style="background-color:green">You have accepted <i class="fa-solid fa-check"></i></h5>
                 <% elsif booking.rejected? %>
-                <h5 style="background-color:red">You have rejected!</h5>
+                <h5 style="background-color:red">You have rejected! <i class="fa-solid fa-x"></i></h5>
                 <% elsif booking.pending? %>
                 <h5 style="background-color: blue">Pending approval!</h5>
                 <% end %>

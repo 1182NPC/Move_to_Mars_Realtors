@@ -32,9 +32,9 @@
                   <% if booking.pending? %>
                   <h5 style="background-color:blue">This booking is pending</h5>
                   <% elsif booking.accepted? %>
-                  <h5 style="background-color:green">This booking was accepted</h5>
+                  <h5 style="background-color:green">This booking was accepted <i class="fa-solid fa-check"></i></h5>
                   <% elsif booking.rejected? %>
-                  <h5 style="background-color:red">This booking was rejected</h5>
+                  <h5 style="background-color:red">This booking was rejected <i class="fa-solid fa-x"></i></h5>
                   <% end%>
                       <%= link_to "View trip details", trip_path(booking.trip), class:"btn btn-success", style:"height:max-content"%>
                 </div>
