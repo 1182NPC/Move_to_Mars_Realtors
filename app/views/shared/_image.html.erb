@@ -1,0 +1,40 @@
+<div class = "home-background">
+  <div class="container">
+    <div class="container w-50 py-4">
+    <div class="image-api my-4">
+      <div class="image-container">
+        <div id="carouselExampleControls" class="carousel slide w-10" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active carouselimgbox">
+              <img class="carouselimg" src="<%=@results[0]%>" alt="First slide">
+            </div>
+            <div class="carousel-item carouselimgbox">
+              <img class="carouselimg" src="<%=@results[1]%>" alt="Second slide">
+            </div>
+            <div class="carousel-item carouselimgbox">
+              <img class="carouselimg" src="<%=@results[2]%>" alt="Third slide">
+            </div>
+            <div class="carousel-item carouselimgbox">
+              <img class="carouselimg" src="<%=@results[3]%>" alt="Third slide">
+            </div>
+            <div class="carousel-item carouselimgbox">
+              <img class="carouselimg" src="<%=@results[4]%>" alt="Third slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="lower-image-container">
+          <h4>Latest Images from the Martian surface!</h4>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
