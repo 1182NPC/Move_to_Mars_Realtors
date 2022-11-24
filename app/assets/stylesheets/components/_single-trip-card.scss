@@ -26,21 +26,21 @@
   }
 
     // Extra large devices (large desktops, 1200px and up)
-  @media (min-height: 1000px) {
+  @media (max-height: 2000px) {
     .trip-images {
       height: 850px;
     }
   }
 
   // Medium devices (tablets, 768px and up)
-  @media (min-height: 700px) {
-    .cards {
+  @media (max-height: 1000px) {
+    .trip-images {
       height: 650px;
     }
   }
 
-  @media (min-height: 450px) {
-    .cards {
+  @media (max-height: 700px) {
+    .trip-images {
       height: 300px;
     }
   }
