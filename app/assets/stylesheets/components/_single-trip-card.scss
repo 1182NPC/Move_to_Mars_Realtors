@@ -9,7 +9,7 @@
   .trip-images {
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 200px;
     display: flex;
     justify-content: center;
     border-top-left-radius: 8px;
@@ -22,6 +22,26 @@
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
       margin-top: 25px;
       color: white;
+    }
+  }
+
+    // Extra large devices (large desktops, 1200px and up)
+  @media (min-height: 1000px) {
+    .trip-images {
+      height: 850px;
+    }
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-height: 700px) {
+    .cards {
+      height: 650px;
+    }
+  }
+
+  @media (min-height: 450px) {
+    .cards {
+      height: 300px;
     }
   }
 }
