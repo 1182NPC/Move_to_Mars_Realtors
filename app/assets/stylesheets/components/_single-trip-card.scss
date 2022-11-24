@@ -25,9 +25,18 @@
     }
   }
 
+  .trip-carousel {
+    display: flex;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
     // Extra large devices (large desktops, 1200px and up)
   @media (max-height: 2000px) {
     .trip-images {
+      height: 850px;
+    }
+    .trip-carousel {
       height: 850px;
     }
   }
@@ -37,10 +46,16 @@
     .trip-images {
       height: 650px;
     }
+    .trip-carousel {
+      height: 650px;
+    }
   }
 
   @media (max-height: 700px) {
     .trip-images {
+      height: 300px;
+    }
+    .trip-carousel {
       height: 300px;
     }
   }
