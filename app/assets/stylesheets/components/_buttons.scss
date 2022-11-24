@@ -6,11 +6,12 @@
   display: flex;
   width: 100%;
   text-align: center;
-  top: 70%;
+  top: 100%;
 }
 
 .button {
-  border: 3px solid #ffffff;
+  border: 1px solid #ffffff;
+  background-color: #e77d11;
   height: 75px;
   width: 200px;
   border-radius: 4px;
@@ -55,12 +56,12 @@
       margin-top: -8px;
     }
     25% {
-      margin-left: 145px;
+      margin-left: 190px;
       margin-top: -8px;
     }
 
     50% {
-      margin-left: 145px;
+      margin-left: 190px;
       margin-top: 65px;
     }
     75% {
@@ -98,6 +99,19 @@
 }
 
 .btn-primary {
-  background-color:#e77d11
+  background-color:#e77d11;
+  border-color: #c1440e;
+}
 
+.btn-success:hover {
+  background-color: #e77d11;
+}
+
+.btn-danger:hover {
+  background-color: #e77d11;
+
+}
+
+.btn-primary:hover {
+  background-color:#fda600;
 }
