@@ -1,21 +1,27 @@
-<%# This code creates an array of bookingns which the current user (the host) can either accept or reject %>
-<%# New conditional statement to see if it is possible to only allow somebody to confirm a trip they are actually hosting %>
-  <% host_bookings = [] %>
-  <% @bookings.each do |booking| %>
-    <% if booking.trip.user = current_user%>
-      <%host_bookings << booking %>
-    <% end %>
-  <% end %>
-
 
 <div id = "bg">
   <div style = "padding-top: 5px">
     <div class="container">
+    <div class="announcement">
+      <% if @bookings.first.nil? %>
+        <h6>You have no current booking requests</h6>
+      <% else  %>
+        <h6>Here are requests to book your trips: </h6>
+      <% end %>
+    </div>
       <div class="cards">
-        <% host_bookings.each do |booking| %>
+        <% @bookings.each do |booking| %>
           <div class="host-card">
             <div class="host-info">
               <h4><strong><%= booking.trip.name %></strong></h4>
+                <% if booking.accepted? %>
+                <h5 style="background-color:green">You have accepted</h5>
+                <% elsif booking.rejected? %>
+                <h5 style="background-color:red">You have rejected!</h5>
+                <% elsif booking.pending? %>
+                <h5 style="background-color: blue">Pending approval!</h5>
+                <% end %>
+
               <h6>Customer: <%=booking.user.email%></h6>
               <h6>Start date: <%= booking.start_date.strftime("%d %b %Y") %></h2>
               <h6>End date: <%= booking.end_date.strftime("%d %b %Y") %></h2>
@@ -26,6 +32,7 @@
                   <%=link_to "Accept this booking", accept_path(booking), class:"btn btn-success"%>
                   <%=link_to "Reject this booking", reject_path(booking), class:"btn btn-danger"%>
                 <% elsif booking.accepted? %>
+
                   <%=link_to "Reject this booking", reject_path(booking), class:"btn btn-danger"%>
                 <% elsif booking.rejected? %>
                   <%=link_to "Accept this booking", accept_path(booking), class:"btn btn-success"%>
