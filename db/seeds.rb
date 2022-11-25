@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+name = ""
+
+description_one = "#{Faker::Name.name} invites you to expand your horizons by visiting #{name}"
+description_two = "Visit mars today! #{name} is located in a beautiful part of #{Faker::Books::Dune.city}"
+description_three = "Have you ever considered moving to mars? Start a new life off-planet today in #{name}"
+description_arr = [description_one, description_two, description_three]
+
+
 puts "Cleaning up database..."
 Trip.delete_all
 User.delete_all
@@ -16,15 +24,38 @@ test_user = User.create(
   password: "123456"
 )
 
-test_trip = Trip.create!(
-  name: "A test trip",
-  price: 70,
-  description: "Why a test trip you ask? MSC is testing out the very latest in rocket technology - save 15% on your
-                booking by flying with us today",
-  user: test_user
-)
+def multiple(name, description_arr, test_user)
+  name = Faker::Space.star_cluster
+  multi_trip = Trip.create(
+    name: name,
+    price: rand(10..1000).to_i,
+    description: description_arr.sample,
+    user: test_user
+  )
+  multi_path = File.join(Rails.root, "app/assets/images/multi_image_seed")
+  multi_trip.photos.attach(io: File.open("#{multi_path}/multi_seed1.jpg"), filename: "multi_seed1.jpg", content_type: "image/jpeg")
+  multi_trip.photos.attach(io: File.open("#{multi_path}/multi_seed2.jpg"), filename: "multi_seed2.jpg", content_type: "image/jpeg")
+  multi_trip.photos.attach(io: File.open("#{multi_path}/multi_seed3.jpg"), filename: "multi_seed3.jpg", content_type: "image/jpeg")
+end
 
-path = File.join(Rails.root, 'app/assets/images/seed_image.jpg')
-test_trip.photos.attach(io: File.open(path), filename: "seed_image.jpg", content_type: "image/jpeg")
+
+def single(name, description_arr, test_user)
+  29.times do
+    name = Faker::Space.star_cluster
+    test_trip = Trip.create(
+    name: name,
+    price: rand(10..1000).to_i,
+    description: description_arr.sample,
+    user: test_user
+  )
+  image_path = "seed_image#{rand(1..6)}.jpg"
+  path = File.join(Rails.root, "app/assets/images/#{image_path}")
+  test_trip.photos.attach(io: File.open(path), filename: image_path, content_type: "image/jpeg")
+
+  end
+end
+
+multiple(name, description_arr, test_user)
+single(name, description_arr, test_user)
 
 puts "Finished!"
