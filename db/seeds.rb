@@ -30,7 +30,7 @@ def multiple(test_user)
 
   multi_trip = Trip.create(
     name:,
-    price: rand(10..1000).to_i,
+    price: rand(10..1000),
     description: create_descriptions(name).sample,
     user: test_user
   )
@@ -49,11 +49,11 @@ def single(test_user)
     name = Faker::Space.star_cluster
     test_trip = Trip.create(
       name:,
-      price: rand(10..1000).to_i,
+      price: rand(10..1000),
       description: create_descriptions(name).sample,
       user: test_user
     )
-    image_path = "seed_image#{rand(1..6)}.jpg"
+    image_path = "seed_image#{rand(1..8)}.jpg"
     path = File.join(Rails.root, "app/assets/images/#{image_path}")
     test_trip.photos.attach(io: File.open(path), filename: image_path, content_type: 'image/jpeg')
   end

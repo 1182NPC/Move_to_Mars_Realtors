@@ -5,15 +5,13 @@
   background-color: #f0e7e7;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px !important;
-  height: 85vh;
   margin: 30px auto;
   max-width: 900px;
 
   .d-block{
-    height: 500px;
     object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 
   .trip-images {
@@ -42,20 +40,38 @@
     // Extra large devices (large desktops, 1200px and up)
   @media (max-height: 2000px) {
     .trip-images {
-      height: 600px;
+      height: 550px;
+    }
+    .d-block {
+      height: 550px;
+    }
+    .trip-card {
+      height: 850px;
     }
   }
 
   // Medium devices (tablets, 768px and up)
   @media (max-height: 1000px) {
     .trip-images {
-      height: 500px;
+      height: 450px;
+    }
+    .d-block {
+      height: 450px;
+    }
+    .trip-card {
+      height: 750px;
     }
   }
 
   @media (max-height: 700px) {
     .trip-images {
       height: 300px;
+    }
+    .d-block{
+      height: 300px;
+    }
+    .trip-card {
+      height: 500px
     }
   }
 }
