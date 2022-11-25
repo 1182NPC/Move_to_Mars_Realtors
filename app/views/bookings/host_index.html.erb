@@ -15,18 +15,18 @@
             <div class="host-info">
               <h4><strong><%= booking.trip.name %></strong></h4>
                 <% if booking.accepted? %>
-                <h5 style="background-color:green">You have accepted <i class="fa-solid fa-check"></i></h5>
+                <h5 style="background-color:#ace898">You have accepted <i class="fa-solid fa-check"></i></h5>
                 <% elsif booking.rejected? %>
                 <h5 style="background-color:red">You have rejected! <i class="fa-solid fa-x"></i></h5>
                 <% elsif booking.pending? %>
-                <h5 style="background-color: blue">Pending approval!</h5>
+                <h5 style="background-color: #9c47ff">Pending approval!</h5>
                 <% end %>
 
               <h6>Customer: <%=booking.user.email%></h6>
               <h6>Start date: <%= booking.start_date.strftime("%d %b %Y") %></h2>
               <h6>End date: <%= booking.end_date.strftime("%d %b %Y") %></h2>
               <h4>Price per day: €<%=booking.trip.price %></h4>
-              <%= link_to "View trip details", trip_path(booking.trip)%>
+              <%= link_to "View trip details", trip_path(booking.trip), style: "padding-top: 10px"%>
               <div class="host-buttons">
                 <% if booking.pending? %>
                   <%=link_to "Accept this booking", accept_path(booking), class:"btn btn-success"%>
