@@ -74,10 +74,11 @@
       display: flex;
       justify-content: space-between;
       margin-top: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      justify-content: center;
 
       a {
-        min-width: 40%;
+        // min-width: 40%;
         margin-left: 10px;
         margin-right: 10px;
       }
@@ -85,9 +86,7 @@
 
     .pending-link {
       display: flex;
-      justify-content: space-between;
-      margin-left: 10px;
-      margin-right: 10px;
+      justify-content: center;
       padding-top: 10px;
 
       a {

@@ -96,6 +96,15 @@
   border-radius: 5px;
 }
 
+.btn-primary {
+  background-color:#ffad48;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  color:black;
+  border-radius: 5px;
+  // width: 50%;
+}
+
 .btn-danger {
   background-color: #ff503c;
   border: none;
@@ -103,14 +112,6 @@
   color:black;
   border-radius: 5px;
   font-weight: bold;
-}
-
-.btn-primary {
-  background-color:#e77d11;
-  border: none;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  color:black;
-  border-radius: 5px;
 }
 
 .btn-success:hover {
@@ -123,5 +124,5 @@
 }
 
 .btn-primary:hover {
-  background-color:#fda600;
+  background-color: #e77d11;
 }

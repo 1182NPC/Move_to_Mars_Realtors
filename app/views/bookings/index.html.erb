@@ -19,24 +19,22 @@
                 <% end %>
                     </div>
               <div class="booking-card-price-buttons">
-
                 <h4>Price per day: <%=booking.trip.price %></h4>
                 <h4>Total price in galactic credits: <%=((booking.end_date - booking.start_date)/86400 * booking.trip.price).round %></h4>
 
                 <div class="pending-link">
                   <% if booking.pending? %>
-                  <h5 style="background-color:blue">Your booking is pending</h5>
+                  <h5 style="background-color:#9c47ff">Your booking is pending</h5>
                   <% elsif booking.accepted? %>
-                  <h5 style="background-color: #ace898">Your booking was accepted <i class="fa-solid fa-check"></i></h5>
+                  <h5 style="background-color:#ace898">Your booking was accepted <i class="fa-solid fa-check"></i></h5>
                   <% elsif booking.rejected? %>
                   <h5 style="background-color:red">Your booking was rejected <i class="fa-solid fa-x"></i></h5>
                   <% end%>
-                      <%= link_to "View trip details", trip_path(booking.trip), class:"btn btn-success", style:"height:max-content"%>
                 </div>
 
                  <div class="booking-info">
+                 <%= link_to "View trip details", trip_path(booking.trip), class:"btn btn-success", style:"height:max-content"%>
                   <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%>
-                  <%= link_to 'Home', root_path, class: "btn btn-primary" %>
                 </div>
               </div>
             </div>
