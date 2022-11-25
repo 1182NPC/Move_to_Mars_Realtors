@@ -5,14 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
 name = ""
-
-description_one = "#{Faker::Name.name} invites you to expand your horizons by visiting #{name}"
-description_two = "Visit mars today! #{name} is located in a beautiful part of #{Faker::Books::Dune.city}"
-description_three = "Have you ever considered moving to mars? Start a new life off-planet today in #{name}"
-description_arr = [description_one, description_two, description_three]
-
 
 puts "Cleaning up database..."
 Trip.delete_all
@@ -24,8 +17,13 @@ test_user = User.create(
   password: "123456"
 )
 
-def multiple(name, description_arr, test_user)
+def multiple(name, test_user)
   name = Faker::Space.star_cluster
+  description_one = "#{Faker::Name.name} invites you to expand your horizons by visiting #{name}"
+  description_two = "Visit mars today! #{name} is located in a beautiful part of #{Faker::Books::Dune.city}"
+  description_three = "Have you ever considered moving to mars? Start a new life off-planet today in #{name}"
+  description_arr = [description_one, description_two, description_three]
+
   multi_trip = Trip.create(
     name: name,
     price: rand(10..1000).to_i,
@@ -39,9 +37,14 @@ def multiple(name, description_arr, test_user)
 end
 
 
-def single(name, description_arr, test_user)
+def single(name, test_user)
   29.times do
     name = Faker::Space.star_cluster
+    description_one = "#{Faker::Name.name} invites you to expand your horizons by visiting #{name}"
+    description_two = "Visit mars today! #{name} is located in a beautiful part of #{Faker::Books::Dune.city}"
+    description_three = "Have you ever considered moving to mars? Start a new life off-planet today in #{name}"
+    description_arr = [description_one, description_two, description_three]
+
     test_trip = Trip.create(
     name: name,
     price: rand(10..1000).to_i,
@@ -55,7 +58,7 @@ def single(name, description_arr, test_user)
   end
 end
 
-multiple(name, description_arr, test_user)
-single(name, description_arr, test_user)
+multiple(name, test_user)
+single(name, test_user)
 
 puts "Finished!"
