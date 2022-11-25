@@ -48,7 +48,7 @@
             <div class="trip-price-buttons">
               <div style="padding: 20px;">
               <em><h5>Price per day: €<%= @trip.price %><h5></em>
-              <h1><%= @trip.description %><h1>
+              <h5><%= @trip.description %><h5>
 
                 <div style="display: flex; justify-content: space-evenly; padding-bottom: 10px; background-color:">
                   <%= link_to 'Book this trip', new_trip_booking_path(@trip), class:"btn btn-success" %>
