@@ -6,14 +6,14 @@ html {
   font-size: 100%;
 }
 
-// body {
-//   margin: 0;
-//   display: grid;
-//   grid-template-rows: auto 1fr auto;
-//   background-color: #f4f4f4;
-//   align-items: start;
-//   min-height: 100vh;
-// }
+body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: #f4f4f4;
+  align-items: start;
+  min-height: 100vh;
+}
 
 .footer {
   display: flex;
@@ -102,6 +102,7 @@ html {
 }
 
 .legal {
+  margin-top: 48px;
   display: flex;
   flex-wrap: wrap;
   color: #999;
