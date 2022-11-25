@@ -55,9 +55,15 @@
       margin-top: 15px;
     }
 
+    h5 {
+      font-size: 16px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      text-align: center;
+    }
+
     h4 {
       text-align: center;
-      margin-top: 15px;
+      margin-top: 5px;
     }
 
     p {
@@ -68,10 +74,11 @@
       display: flex;
       justify-content: space-between;
       margin-top: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      justify-content: center;
 
       a {
-        min-width: 40%;
+        // min-width: 40%;
         margin-left: 10px;
         margin-right: 10px;
       }
@@ -79,16 +86,17 @@
 
     .pending-link {
       display: flex;
-      justify-content: space-between;
-      margin-left: 10px;
-      margin-right: 10px;
+      justify-content: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
 
       a {
         text-align: center;
       }
 
       h5 {
-        width: 50%;
+        // width: 50%;
         padding: 10px;
         border-radius: 5px;
       }
