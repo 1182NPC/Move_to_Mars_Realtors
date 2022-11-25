@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def home
     # image
-    @results =["", "", ""]
+    @results = ["","",""]
   end
 
   # def image
@@ -16,9 +16,11 @@ class PagesController < ApplicationController
   #   end
   # end
 
+
   # def serialize
-  #   url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2022-11-1&api_key=MzMSisiZMgsp8ZMzti6SLT3dgCtCNOUp2IjD1U0B"
+  #   url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2022-11-1&api_key=QlznhKndy19hbfAVKWeMFeC6wKc5Sec0fUz34g0T"
   #   attempt_serialized = URI.open(url).read
   #     JSON.parse(attempt_serialized)
   # end
+
 end
