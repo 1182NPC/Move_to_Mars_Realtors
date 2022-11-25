@@ -63,7 +63,7 @@
 
     h4 {
       text-align: center;
-      margin-top: 15px;
+      margin-top: 5px;
     }
 
     p {
@@ -88,13 +88,15 @@
       display: flex;
       justify-content: center;
       padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
 
       a {
         text-align: center;
       }
 
       h5 {
-        width: 50%;
+        // width: 50%;
         padding: 10px;
         border-radius: 5px;
       }
