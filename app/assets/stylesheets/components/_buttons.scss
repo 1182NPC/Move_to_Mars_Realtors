@@ -2,11 +2,10 @@
 
 .trips-button-container {
   justify-content: center;
-  // position: absolute;
+  position: relative;
   display: flex;
   width: 100%;
   text-align: center;
-  top: 100%;
 }
 
 .button {
@@ -16,23 +15,25 @@
   width: 200px;
   border-radius: 4px;
   align-self: center;
-  display: inline-flex;
   text-align: center;
-
+  position: relative;
 
   cursor: pointer;
   margin: 25px;
   font-weight: bolder;
+  justify-content: center;
 
   &::after {
     content: "Exit Earth";
     position: absolute;
-    left: 50%;
+    /* left: 50%; */
     transform: translate(-50%);
     color: white;
     transition: all 0.1s linear;
-    top: 79%;
+    top: 35%;
+    width: 100%;
   }
+
 
   &::before {
     content: "";
