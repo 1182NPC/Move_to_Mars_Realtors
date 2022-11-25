@@ -5,6 +5,16 @@
   background-color: #f0e7e7;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px !important;
+  height: auto;
+  margin: 30px auto;
+  max-width: 900px;
+
+  .d-block{
+    height: 500px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
 
   .trip-images {
     background-size: cover;
@@ -32,14 +42,14 @@
     // Extra large devices (large desktops, 1200px and up)
   @media (max-height: 2000px) {
     .trip-images {
-      height: 850px;
+      height: 600px;
     }
   }
 
   // Medium devices (tablets, 768px and up)
   @media (max-height: 1000px) {
     .trip-images {
-      height: 650px;
+      height: 500px;
     }
   }
 
