@@ -90,17 +90,27 @@
 
 .btn-success {
   background-color: #ffad48;
-  border-color: #c1440e;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  color:black;
+  border-radius: 5px;
 }
 
 .btn-danger {
-  background-color: #ae4f00;
-  border-color: #c1440e;
+  background-color: #ff503c;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  color:black;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .btn-primary {
   background-color:#e77d11;
-  border-color: #c1440e;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  color:black;
+  border-radius: 5px;
 }
 
 .btn-success:hover {
