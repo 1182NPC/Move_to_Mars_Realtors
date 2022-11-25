@@ -23,7 +23,7 @@
             <div class="card-price-buttons">
               <h6> Price per day: €<%= trip.price %> </h6>
                 <div class="info">
-                  <%= link_to 'View trip details', trip_path(trip) %>
+                  <%= link_to 'View trip details', trip_path(trip), data: {turbo_confirm: "Are you sure?"} %>
                   <%= link_to 'Back', root_path %>
                 </div>
             </div>

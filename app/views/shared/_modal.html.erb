@@ -1,0 +1,30 @@
+<% one = "! You have failed to meet your weekly quota for Florine production! Your cubicle oxygen levels have been reduced to 29%! Have a great day!" %>
+<% two = "SUBJUNCT 9: Following the breach in Accommodation Dome 5, facilitator Brent has announced a Subjunct wide ban on mega-frisbee" %>
+<% three = "M2M will not accept liability for any health effects due to long term low grav environment exposure" %>
+<% four = "Final check in for Flight 719 to Phobos Mineral Extraction center" %>
+<% five = "Don't forget our monthly processing deadline for Florine - only 3 days remaining."%>
+<% six = "For our Economy class guests, Canteen 7 will be serving recalcified rat meat from 7pm. First come, first served!" %>
+<% seven = "Good morning! The outside temperature is -65°C! Have a great day!" %>
+<% eight = "By booking my place aboard the Marsbound starship M2M Perihelion, I consent to full biological testing of Earthbourne pathogens, incl. Supervirus 26' and/or latest outbreaks. I confirm I have not visited the toxic Eurasian oil mine plateau in the last 2 months. Failure to comply or deliberate falsification of information is a criminal offense and will result in human meat processing upon arrival to the Martian surface." %>
+<% nine = "Biodomes guaranteed to withstand category 3 dust storms!" %>
+<% ten = "Day five since last breach! Make it to day seven for three extra class C desert bars. Let's get there!" %>
+<% array = [one, two, three, four, five, six, seven, eight, nine, ten ] %>
+<% num = [1..10].sample %>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Alert!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= array.sample  %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
